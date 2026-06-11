@@ -1,8 +1,10 @@
-import React from 'react'
 
 const page = () => {
   return (
-    <div>layout</div>
+   <>
+    <div>About This</div>
+
+   </>
   )
 }
 
