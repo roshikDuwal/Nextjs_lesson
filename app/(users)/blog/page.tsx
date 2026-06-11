@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const url = "https://jsonplaceholder.typicode.com/posts";
 
 interface IPost {
@@ -18,6 +20,9 @@ const BlogPage = async () => {
           <li key={index} className="border p-4">
             <h2 className="font-bold text-lg mb-2">{post.title}</h2>
             <p>{post.body}</p>
+            <Link href={`/blog/${post.id}/${post.title}`} className="text-blue-500 hover:underline">
+              View in Detail
+            </Link>
           </li>
         ))}
       </ul>

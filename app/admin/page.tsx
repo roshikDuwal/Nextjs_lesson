@@ -1,8 +1,7 @@
-import React from 'react'
 
 const Page = () => {
   return (
-    <div>Hello admin page</div>
+    <div>Hello admin dashboard page</div>
   )
 }
 
