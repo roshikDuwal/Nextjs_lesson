@@ -11,25 +11,6 @@ const getAllDoctors = cache(async () => {
   return doctors;
 });
 
-const DynamicPage = async () => {
-
-  const doctors =await getAllDoctors();
-
-  if (doctors && doctors.length === 0) {
-    return <div>No doctors found.</div>;
-  }
-
-  return (
-    <div>
-      <DoctorList doctors={doctors} />
-    </div>
-  );
-};
-
-export default DynamicPage;
-
-
-
 const DoctorList = async ({ doctors }: { doctors: any }) => {
   const doctorsSecond =await getAllDoctors();
   return (
@@ -57,3 +38,24 @@ const DoctorList = async ({ doctors }: { doctors: any }) => {
     </>
   );
 };
+
+
+const DynamicPage = async () => {
+
+  const doctors =await getAllDoctors();
+
+  if (doctors && doctors.length === 0) {
+    return <div>No doctors found.</div>;
+  }
+
+  return (
+    <div>
+      <DoctorList doctors={doctors} />
+    </div>
+  );
+};
+
+export default DynamicPage;
+
+
+
