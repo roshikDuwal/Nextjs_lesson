@@ -1,12 +1,17 @@
 import mysql from "mysql2/promise";
 
-export const db= mysql.createPool({
+// export const db= mysql.createPool({
+//     host: "localhost",
+//     user:"root",  
+//     password:"Password@123",
+//     database:"nextjsdb"
+// });
+export const db = mysql.createPool({
     host: "localhost",
-    user:"root",  
-    password:"Password@123",
-    database:"nextjsdb"
+    user: "root",
+    password: "Password@1",
+    database: "hospitaldb"
 });
-
 try{
 
 const connection = await db.getConnection();

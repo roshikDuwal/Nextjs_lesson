@@ -4,14 +4,14 @@ import { db } from "@/config/db";
 //After build store the data statically and serve the same data for every request and donot fetch new data from database for every request.
 
 // so in to revalidate data in this we use ISR 
-export const revalidate=30; //sec
+export const revalidate=30; 
 
 const StaticPage = async () => {
   const [rows, fields] = await db.query("SELECT * FROM tbldoctors");
   console.log("Static page");
   const doctors = rows as any[];
 
-  if (doctors && doctors.length === 0) {
+  if (doctors?.length === 0) {
     return <div>No doctors found.</div>;
   }
 

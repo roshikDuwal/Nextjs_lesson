@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import { Roboto, Work_Sans } from "next/font/google";
+import { Roboto, Work_Sans, Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -61,7 +64,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
      <body className={`${roboto.variable} ${workSans.variable}`.trim()}>
         {children}
       </body>
